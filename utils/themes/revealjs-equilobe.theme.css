@@ -1,0 +1,677 @@
+/**
+ * Equilobe theme for reveal.js
+ * Author: Alex http://github.com/Aszharite
+ */
+ @import url("https://fonts.googleapis.com/css2?family=Carme&display=swap");
+ @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap");
+ @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+ /*********************************************
+  * GLOBAL STYLES
+  *********************************************/
+ :root {
+   --background-color: #FFFFFF;
+   --main-font: Open Sans, sans-serif;
+   --main-font-size: 40px;
+   --main-color: #000000;
+   --block-margin: 20px;
+   --heading-margin: 0 0 20px 0;
+   --heading-font: Carme, sans-serif;
+   --heading-color: #01BDFB;
+   --heading-line-height: 1.2;
+   --heading-letter-spacing: normal;
+   --heading-text-transform: uppercase;
+   --heading-text-shadow: none;
+   --heading-font-weight: normal;
+   --heading1-text-shadow: none;
+   --heading1-size: 3.77em;
+   --heading2-size: 2.11em;
+   --heading3-size: 1.55em;
+   --heading4-size: 1em;
+   --code-font: monospace;
+   --link-color: #01BDFB;
+   --link-color-hover: #71e9f4;
+   --selection-background-color: #01BDFB;
+   --selection-color: #FFFFFF; }
+ 
+ .reveal-viewport {
+   background: #FFFFFF;
+   background-color: #FFFFFF; }
+ 
+ .reveal {
+   font-family: "Open Sans", sans-serif;
+   font-size: 40px;
+   font-weight: normal;
+   color: #000000; }
+ 
+ .reveal ::selection {
+   color: #FFFFFF;
+   background: #01BDFB;
+   text-shadow: none; }
+ 
+ .reveal ::-moz-selection {
+   color: #FFFFFF;
+   background: #01BDFB;
+   text-shadow: none; }
+ 
+ .reveal .slides section,
+ .reveal .slides section > section {
+   line-height: 1.3;
+   font-weight: inherit; }
+ 
+ /*********************************************
+  * HEADERS
+  *********************************************/
+ .reveal h1,
+ .reveal h2,
+ .reveal h3,
+ .reveal h4,
+ .reveal h5,
+ .reveal h6 {
+   margin: 0 0 20px 0;
+   color: #01BDFB;
+   font-family: "Carme", "sans-serif";
+   font-weight: normal;
+   line-height: 1.2;
+   letter-spacing: normal;
+   text-transform: uppercase;
+   text-shadow: none;
+   word-wrap: break-word; }
+ 
+ .reveal h1 {
+   font-size: 3.77em; }
+ 
+ .reveal h2 {
+   font-size: 2.11em; }
+ 
+ .reveal h3 {
+   font-size: 1.55em; }
+ 
+ .reveal h4 {
+   font-size: 1em; }
+ 
+ .reveal h1 {
+   text-shadow: none; }
+ 
+ /*********************************************
+  * OTHER
+  *********************************************/
+ .reveal p {
+   margin: 20px 0;
+   line-height: 1.3; }
+ 
+ /* Remove trailing margins after titles */
+ .reveal h1:last-child,
+ .reveal h2:last-child,
+ .reveal h3:last-child,
+ .reveal h4:last-child,
+ .reveal h5:last-child,
+ .reveal h6:last-child {
+   margin-bottom: 0; }
+ 
+ /* Ensure certain elements are never larger than the slide itself */
+ .reveal img,
+ .reveal video,
+ .reveal iframe {
+   max-width: 95%;
+   max-height: 95%; }
+ 
+ .reveal strong,
+ .reveal b {
+   font-weight: bold; }
+ 
+ .reveal em {
+   font-style: italic; }
+ 
+ .reveal ol,
+ .reveal dl,
+ .reveal ul {
+   display: inline-block;
+   text-align: left;
+   margin: 0 0 0 1em; }
+ 
+ .reveal ol {
+   list-style-type: decimal; }
+ 
+ .reveal ul {
+   list-style-type: disc; }
+ 
+ .reveal ul ul {
+   list-style-type: square; }
+ 
+ .reveal ul ul ul {
+   list-style-type: circle; }
+ 
+ .reveal ul ul,
+ .reveal ul ol,
+ .reveal ol ol,
+ .reveal ol ul {
+   display: block;
+   margin-left: 40px; }
+ 
+ .reveal dt {
+   font-weight: bold; }
+ 
+ .reveal dd {
+   margin-left: 40px; }
+ 
+ .reveal blockquote {
+   display: block;
+   position: relative;
+   width: 70%;
+   margin: 20px auto;
+   padding: 5px;
+   font-style: italic;
+   background: rgba(255, 255, 255, 0.05);
+   box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2); }
+ 
+ .reveal blockquote p:first-child,
+ .reveal blockquote p:last-child {
+   display: inline-block; }
+ 
+ .reveal q {
+   font-style: italic; }
+ 
+ .reveal pre {
+   display: block;
+   position: relative;
+   width: 90%;
+   margin: 20px auto;
+   text-align: left;
+   font-size: 0.55em;
+   font-family: monospace;
+   line-height: 1.2em;
+   word-wrap: break-word;
+   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15); }
+ 
+ .reveal code {
+   font-family: monospace;
+   text-transform: none; }
+ 
+ .reveal pre code {
+   display: block;
+   padding: 5px;
+   overflow: auto;
+   max-height: 400px;
+   word-wrap: normal; }
+ 
+ .reveal table {
+   margin: auto;
+   border-collapse: collapse;
+   border-spacing: 0; }
+ 
+ .reveal table th {
+   font-weight: bold; }
+ 
+ .reveal table th,
+ .reveal table td {
+   text-align: left;
+   padding: 0.2em 0.5em 0.2em 0.5em;
+   border-bottom: 1px solid; }
+ 
+ .reveal table th[align="center"],
+ .reveal table td[align="center"] {
+   text-align: center; }
+ 
+ .reveal table th[align="right"],
+ .reveal table td[align="right"] {
+   text-align: right; }
+ 
+ .reveal table tbody tr:last-child th,
+ .reveal table tbody tr:last-child td {
+   border-bottom: none; }
+ 
+ .reveal sup {
+   vertical-align: super;
+   font-size: smaller; }
+ 
+ .reveal sub {
+   vertical-align: sub;
+   font-size: smaller; }
+ 
+ .reveal small {
+   display: inline-block;
+   font-size: 0.6em;
+   line-height: 1.2em;
+   vertical-align: top; }
+ 
+ .reveal small * {
+   vertical-align: top; }
+ 
+ .reveal img {
+   margin: 20px 0; }
+ 
+ /*********************************************
+  * LINKS
+  *********************************************/
+ .reveal a {
+   color: #01BDFB;
+   text-decoration: none;
+   transition: color .15s ease; }
+ 
+ .reveal a:hover {
+   color: #71e9f4;
+   text-shadow: none;
+   border: none; }
+ 
+ .reveal .roll span:after {
+   color: #fff;
+   background: #0184af; }
+ 
+ /*********************************************
+  * Frame helper
+  *********************************************/
+ .reveal .r-frame {
+   border: 4px solid #000000;
+   box-shadow: 0 0 10px rgba(0, 0, 0, 0.15); }
+ 
+ .reveal a .r-frame {
+   transition: all .15s linear; }
+ 
+ .reveal a:hover .r-frame {
+   border-color: #01BDFB;
+   box-shadow: 0 0 20px rgba(0, 0, 0, 0.55); }
+ 
+ /*********************************************
+  * NAVIGATION CONTROLS
+  *********************************************/
+ .reveal .controls {
+   color: #01BDFB; }
+ 
+ /*********************************************
+  * PROGRESS BAR
+  *********************************************/
+ .reveal .progress {
+   background: rgba(0, 0, 0, 0.2);
+   color: #01BDFB; }
+ 
+ /*********************************************
+  * PRINT BACKGROUND
+  *********************************************/
+ @media print {
+   .backgrounds {
+     background-color: #FFFFFF; } }
+ 
+ h3,
+ h4,
+ h5,
+ h6 {
+   text-decoration: underline; }
+ 
+ .title-slide,
+ .chapter-slide {
+   /*********************************************
+  * GLOBAL STYLES
+  *********************************************/
+   /*********************************************
+  * HEADERS
+  *********************************************/
+   /*********************************************
+  * OTHER
+  *********************************************/
+   /* Remove trailing margins after titles */
+   /* Ensure certain elements are never larger than the slide itself */
+   /*********************************************
+  * LINKS
+  *********************************************/
+   /*********************************************
+  * Frame helper
+  *********************************************/
+   /*********************************************
+  * NAVIGATION CONTROLS
+  *********************************************/
+   /*********************************************
+  * PROGRESS BAR
+  *********************************************/
+   /*********************************************
+  * PRINT BACKGROUND
+  *********************************************/ }
+   .title-slide::before,
+   .chapter-slide::before {
+     content: url("https://static.wixstatic.com/media/e97736_95244912f1dd4b6da6df99719bdff85d~mv2.png/v1/fill/w_288,h_88,al_c,q_85,usm_0.66_1.00_0.01/equilobe-software-development-alb_edited.webp");
+     transform: scale(0.5) translateX(50%) translateY(-50%);
+     position: absolute;
+     right: 16px;
+     top: 16px; }
+   .title-slide :root,
+   .chapter-slide :root {
+     --background-color: #FFFFFF;
+     --main-font: Open Sans, sans-serif;
+     --main-font-size: 40px;
+     --main-color: #FFFFFF;
+     --block-margin: 20px;
+     --heading-margin: 0 0 20px 0;
+     --heading-font: Carme, sans-serif;
+     --heading-color: #FFFFFF;
+     --heading-line-height: 1.2;
+     --heading-letter-spacing: normal;
+     --heading-text-transform: uppercase;
+     --heading-text-shadow: none;
+     --heading-font-weight: normal;
+     --heading1-text-shadow: none;
+     --heading1-size: 3.77em;
+     --heading2-size: 2.11em;
+     --heading3-size: 1.55em;
+     --heading4-size: 1em;
+     --code-font: monospace;
+     --link-color: #FFFFFF;
+     --link-color-hover: #71e9f4;
+     --selection-background-color: #FFFFFF;
+     --selection-color: #FFFFFF; }
+   .title-slide .reveal-viewport,
+   .chapter-slide .reveal-viewport {
+     background: #FFFFFF;
+     background-color: #FFFFFF; }
+   .title-slide .reveal,
+   .chapter-slide .reveal {
+     font-family: "Open Sans", sans-serif;
+     font-size: 40px;
+     font-weight: normal;
+     color: #FFFFFF; }
+   .title-slide .reveal ::selection,
+   .chapter-slide .reveal ::selection {
+     color: #FFFFFF;
+     background: #FFFFFF;
+     text-shadow: none; }
+   .title-slide .reveal ::-moz-selection,
+   .chapter-slide .reveal ::-moz-selection {
+     color: #FFFFFF;
+     background: #FFFFFF;
+     text-shadow: none; }
+   .title-slide .reveal .slides section,
+   .title-slide .reveal .slides section > section,
+   .chapter-slide .reveal .slides section,
+   .chapter-slide .reveal .slides section > section {
+     line-height: 1.3;
+     font-weight: inherit; }
+   .title-slide .reveal h1,
+   .title-slide .reveal h2,
+   .title-slide .reveal h3,
+   .title-slide .reveal h4,
+   .title-slide .reveal h5,
+   .title-slide .reveal h6,
+   .chapter-slide .reveal h1,
+   .chapter-slide .reveal h2,
+   .chapter-slide .reveal h3,
+   .chapter-slide .reveal h4,
+   .chapter-slide .reveal h5,
+   .chapter-slide .reveal h6 {
+     margin: 0 0 20px 0;
+     color: #FFFFFF;
+     font-family: "Carme", "sans-serif";
+     font-weight: normal;
+     line-height: 1.2;
+     letter-spacing: normal;
+     text-transform: uppercase;
+     text-shadow: none;
+     word-wrap: break-word; }
+   .title-slide .reveal h1,
+   .chapter-slide .reveal h1 {
+     font-size: 3.77em; }
+   .title-slide .reveal h2,
+   .chapter-slide .reveal h2 {
+     font-size: 2.11em; }
+   .title-slide .reveal h3,
+   .chapter-slide .reveal h3 {
+     font-size: 1.55em; }
+   .title-slide .reveal h4,
+   .chapter-slide .reveal h4 {
+     font-size: 1em; }
+   .title-slide .reveal h1,
+   .chapter-slide .reveal h1 {
+     text-shadow: none; }
+   .title-slide .reveal p,
+   .chapter-slide .reveal p {
+     margin: 20px 0;
+     line-height: 1.3; }
+   .title-slide .reveal h1:last-child,
+   .title-slide .reveal h2:last-child,
+   .title-slide .reveal h3:last-child,
+   .title-slide .reveal h4:last-child,
+   .title-slide .reveal h5:last-child,
+   .title-slide .reveal h6:last-child,
+   .chapter-slide .reveal h1:last-child,
+   .chapter-slide .reveal h2:last-child,
+   .chapter-slide .reveal h3:last-child,
+   .chapter-slide .reveal h4:last-child,
+   .chapter-slide .reveal h5:last-child,
+   .chapter-slide .reveal h6:last-child {
+     margin-bottom: 0; }
+   .title-slide .reveal img,
+   .title-slide .reveal video,
+   .title-slide .reveal iframe,
+   .chapter-slide .reveal img,
+   .chapter-slide .reveal video,
+   .chapter-slide .reveal iframe {
+     max-width: 95%;
+     max-height: 95%; }
+   .title-slide .reveal strong,
+   .title-slide .reveal b,
+   .chapter-slide .reveal strong,
+   .chapter-slide .reveal b {
+     font-weight: bold; }
+   .title-slide .reveal em,
+   .chapter-slide .reveal em {
+     font-style: italic; }
+   .title-slide .reveal ol,
+   .title-slide .reveal dl,
+   .title-slide .reveal ul,
+   .chapter-slide .reveal ol,
+   .chapter-slide .reveal dl,
+   .chapter-slide .reveal ul {
+     display: inline-block;
+     text-align: left;
+     margin: 0 0 0 1em; }
+   .title-slide .reveal ol,
+   .chapter-slide .reveal ol {
+     list-style-type: decimal; }
+   .title-slide .reveal ul,
+   .chapter-slide .reveal ul {
+     list-style-type: disc; }
+   .title-slide .reveal ul ul,
+   .chapter-slide .reveal ul ul {
+     list-style-type: square; }
+   .title-slide .reveal ul ul ul,
+   .chapter-slide .reveal ul ul ul {
+     list-style-type: circle; }
+   .title-slide .reveal ul ul,
+   .title-slide .reveal ul ol,
+   .title-slide .reveal ol ol,
+   .title-slide .reveal ol ul,
+   .chapter-slide .reveal ul ul,
+   .chapter-slide .reveal ul ol,
+   .chapter-slide .reveal ol ol,
+   .chapter-slide .reveal ol ul {
+     display: block;
+     margin-left: 40px; }
+   .title-slide .reveal dt,
+   .chapter-slide .reveal dt {
+     font-weight: bold; }
+   .title-slide .reveal dd,
+   .chapter-slide .reveal dd {
+     margin-left: 40px; }
+   .title-slide .reveal blockquote,
+   .chapter-slide .reveal blockquote {
+     display: block;
+     position: relative;
+     width: 70%;
+     margin: 20px auto;
+     padding: 5px;
+     font-style: italic;
+     background: rgba(255, 255, 255, 0.05);
+     box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2); }
+   .title-slide .reveal blockquote p:first-child,
+   .title-slide .reveal blockquote p:last-child,
+   .chapter-slide .reveal blockquote p:first-child,
+   .chapter-slide .reveal blockquote p:last-child {
+     display: inline-block; }
+   .title-slide .reveal q,
+   .chapter-slide .reveal q {
+     font-style: italic; }
+   .title-slide .reveal pre,
+   .chapter-slide .reveal pre {
+     display: block;
+     position: relative;
+     width: 90%;
+     margin: 20px auto;
+     text-align: left;
+     font-size: 0.55em;
+     font-family: monospace;
+     line-height: 1.2em;
+     word-wrap: break-word;
+     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15); }
+   .title-slide .reveal code,
+   .chapter-slide .reveal code {
+     font-family: monospace;
+     text-transform: none; }
+   .title-slide .reveal pre code,
+   .chapter-slide .reveal pre code {
+     display: block;
+     padding: 5px;
+     overflow: auto;
+     max-height: 400px;
+     word-wrap: normal; }
+   .title-slide .reveal table,
+   .chapter-slide .reveal table {
+     margin: auto;
+     border-collapse: collapse;
+     border-spacing: 0; }
+   .title-slide .reveal table th,
+   .chapter-slide .reveal table th {
+     font-weight: bold; }
+   .title-slide .reveal table th,
+   .title-slide .reveal table td,
+   .chapter-slide .reveal table th,
+   .chapter-slide .reveal table td {
+     text-align: left;
+     padding: 0.2em 0.5em 0.2em 0.5em;
+     border-bottom: 1px solid; }
+   .title-slide .reveal table th[align="center"],
+   .title-slide .reveal table td[align="center"],
+   .chapter-slide .reveal table th[align="center"],
+   .chapter-slide .reveal table td[align="center"] {
+     text-align: center; }
+   .title-slide .reveal table th[align="right"],
+   .title-slide .reveal table td[align="right"],
+   .chapter-slide .reveal table th[align="right"],
+   .chapter-slide .reveal table td[align="right"] {
+     text-align: right; }
+   .title-slide .reveal table tbody tr:last-child th,
+   .title-slide .reveal table tbody tr:last-child td,
+   .chapter-slide .reveal table tbody tr:last-child th,
+   .chapter-slide .reveal table tbody tr:last-child td {
+     border-bottom: none; }
+   .title-slide .reveal sup,
+   .chapter-slide .reveal sup {
+     vertical-align: super;
+     font-size: smaller; }
+   .title-slide .reveal sub,
+   .chapter-slide .reveal sub {
+     vertical-align: sub;
+     font-size: smaller; }
+   .title-slide .reveal small,
+   .chapter-slide .reveal small {
+     display: inline-block;
+     font-size: 0.6em;
+     line-height: 1.2em;
+     vertical-align: top; }
+   .title-slide .reveal small *,
+   .chapter-slide .reveal small * {
+     vertical-align: top; }
+   .title-slide .reveal img,
+   .chapter-slide .reveal img {
+     margin: 20px 0; }
+   .title-slide .reveal a,
+   .chapter-slide .reveal a {
+     color: #FFFFFF;
+     text-decoration: none;
+     transition: color .15s ease; }
+   .title-slide .reveal a:hover,
+   .chapter-slide .reveal a:hover {
+     color: #71e9f4;
+     text-shadow: none;
+     border: none; }
+   .title-slide .reveal .roll span:after,
+   .chapter-slide .reveal .roll span:after {
+     color: #fff;
+     background: #d9d9d9; }
+   .title-slide .reveal .r-frame,
+   .chapter-slide .reveal .r-frame {
+     border: 4px solid #FFFFFF;
+     box-shadow: 0 0 10px rgba(0, 0, 0, 0.15); }
+   .title-slide .reveal a .r-frame,
+   .chapter-slide .reveal a .r-frame {
+     transition: all .15s linear; }
+   .title-slide .reveal a:hover .r-frame,
+   .chapter-slide .reveal a:hover .r-frame {
+     border-color: #FFFFFF;
+     box-shadow: 0 0 20px rgba(0, 0, 0, 0.55); }
+   .title-slide .reveal .controls,
+   .chapter-slide .reveal .controls {
+     color: #FFFFFF; }
+   .title-slide .reveal .progress,
+   .chapter-slide .reveal .progress {
+     background: rgba(0, 0, 0, 0.2);
+     color: #FFFFFF; }
+   @media print {
+     .title-slide .backgrounds,
+     .chapter-slide .backgrounds {
+       background-color: #FFFFFF; } }
+ 
+ .title-slide {
+   background: linear-gradient(rgba(1, 189, 251, 0.8), rgba(1, 189, 251, 0.8)), url("https://images.unsplash.com/photo-1522542550221-31fd19575a2d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8");
+   background-size: cover;
+   background-position: center;
+   background-repeat: no-repeat; }
+ 
+ .chapter-slide {
+   background-color: #01BDFB; }
+ 
+ .eq-color-text-primary {
+   color: #01BDFB; }
+ 
+ .eq-color-bg-primary {
+   background-color: #01BDFB; }
+ 
+ .eq-presentation-gallery {
+   display: flex; }
+ 
+ .eq-presentation-card {
+   width: 300px;
+   height: 450px;
+   margin: 0 16px;
+   border-radius: 30px;
+   overflow: hidden;
+   display: flex;
+   flex-direction: column;
+   align-items: stretch;
+   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px; }
+ 
+ .eq-presentation-speaker-avatar {
+   width: 100px;
+   height: 100px;
+   margin: 32px auto !important;
+   border-radius: 50%;
+   border: 5px solid #01BDFB; }
+ 
+ .eq-presentation-description {
+   background: #01BDFB;
+   flex: 1;
+   color: #fff;
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+   justify-content: flex-end;
+   padding: 32px; }
+ 
+ .eq-presentation-title {
+   font-family: "Carme", "sans-serif";
+   text-transform: uppercase;
+   font-size: 0.6em;
+   text-align: start; }
+ 
+ .eq-presentation-speaker {
+   font-family: "Carme", "sans-serif";
+   text-transform: uppercase;
+   font-size: 0.3em;
+   font-style: italic; }
+ 

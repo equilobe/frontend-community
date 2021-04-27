@@ -1,0 +1,22 @@
+{
+  "name": "util-presentation-templates",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eq-fe-community/util-presentation-templates.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eq-fe-community/util-presentation-templates/issues"
+  },
+  "homepage": "https://github.com/eq-fe-community/util-presentation-templates#readme",
+  "dependencies": {
+    "reveal.js": "4.1.0"
+  }
+}
