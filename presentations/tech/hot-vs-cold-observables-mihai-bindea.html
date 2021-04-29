@@ -1,0 +1,157 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <title>Equilobe Frontend Meetup #1</title>
+        <link rel="stylesheet" href="/node_modules/reveal.js/dist/reset.css">
+        <link rel="stylesheet" href="/node_modules/reveal.js/dist/reveal.css">
+        <link rel="stylesheet" href="../../utils/themes/revealjs-equilobe.theme.css" id="theme">
+        <!-- Theme used for syntax highlighted code -->
+        <link rel="stylesheet" href="/node_modules/reveal.js/plugin/highlight/monokai.css" id="highlight-theme">
+        <script src="/node_modules/reveal.js/dist/reveal.js"></script>
+        <script src="/node_modules/reveal.js/plugin/notes/notes.js"></script>
+        <script src="/node_modules/reveal.js/plugin/markdown/markdown.js"></script>
+        <script src="/node_modules/reveal.js/plugin/highlight/highlight.js"></script>
+    </head>
+    <body>
+        <div class="reveal">
+            <!-- Any section element inside of this container is displayed as a slide -->
+            <div class="slides">
+                <section data-state="title-slide">
+                    <h2>Observables</h2>
+                    <h3>Hot VS Cold</h3>
+                </section>
+                <section>
+                    <section data-state="chapter-slide">
+                        <h3>But why?</h3>
+                        <div>
+                            <img src="https://i.redd.it/am80r0de1b341.jpg" height="400">
+                        </div>
+                    </section>
+                    <section>
+                        <div>
+                            <img src="https://thepracticaldev.s3.amazonaws.com/i/vdjbnikg9toxw2y6kasy.png" height="600">
+                        </div>
+                    </section>
+                </section>
+                <section>
+                    <section data-state="chapter-slide">
+                        <h3>Functions</h3>
+                        <h3>&</h3>
+                        <h3>Generators</h3>
+                    </section>
+                    <section>
+                        <h3>Function</h3>
+                        <h4>Pull or Push?</h4>
+                        <pre>
+                            <code data-trim data-line-numbers="1-5 | 7,8">
+                                
+								// production
+								const dillemaSolver = (question: string) => {
+									const answers = ["Yes", "No"];
+									console.log(`** Q: ${question} A: `, answers[Math.round(Math.random())]);
+								};
+								
+								// consumption
+								dillemaSolver("Should I netflix and chill?");
+                            </code>
+                        </pre>
+                    </section>
+                    <section>
+                        <h3>Generator</h3>
+                        <h4>Pull or Push?</h4>
+                        <pre>
+                            <code data-trim data-line-numbers="1-6 | 8-9 | 11-12">
+                                
+								function* generator(i) {
+									yield i;
+									yield i + 10;
+								}
+								  
+								const gen = generator(10);
+								
+								console.log(gen.next().value);
+								// output: 10
+								
+								console.log(gen.next().value);
+								// output: 20
+                            </code>
+                        </pre>
+                    </section>
+                </section>
+                <section>
+					<section data-state="chapter-slide">
+                        <h3>Promises</h3>
+                        <h3>&</h3>
+                        <h3>Observables</h3>
+                    </section>
+                    <section> 
+                        <h3>Promise</h3>
+                        <h4>Pull or Push?</h4> 
+                        <pre>
+                            <code data-trim data-line-numbers="2 | 7 | 11 | 4">
+                                
+								const welcomePromise = new Promise(resolve => {
+									console.log("In Promise executor fn");
+								  
+									resolve("Welcome!");
+								});
+								
+								console.log("Before calling the then method");
+								
+								welcomePromise.then(console.log);
+								
+								console.log("After calling the then method");
+                            </code>
+                        </pre>
+                    </section>
+                    <section>
+                        <h3>Observable</h3>
+                        <h4>Pull or Push?</h4>  
+                        <pre>
+                            <code data-trim data-line-numbers="10 | 2 | 14 | 5">
+                                
+								const asyncWelcomeObservable$ = new Observable(observer => {
+								  console.log("In Observable producer fn");
+								
+								  setTimeout(() => {
+								    observer.next("Welcome!");
+								    observer.complete();
+								  }, 500);
+								});
+
+								console.log("Before calling the subscribe method");
+
+								asyncWelcomeObservable$.subscribe(console.log);
+
+								console.log("After calling the subscribe method");
+                            </code>
+                        </pre>
+                    </section>
+                </section>
+                <section>
+					<section data-state="chapter-slide">
+                        <h3>Hot VS Cold</h3> 
+                        <h3>Observables</h3>
+						<img src="https://i.pinimg.com/originals/f1/83/89/f183899bc7633661af44bea0781fd2f8.jpg" width="400">
+                    </section> 
+                </section>
+                <section>
+					<section data-state="chapter-slide">
+                        <h3>Takeaways</h3> 
+                    </section> 
+                    <section>
+                        <div>
+                            <img src="https://thepracticaldev.s3.amazonaws.com/i/vdjbnikg9toxw2y6kasy.png" height="600">
+                        </div>
+                    </section>
+                    <section>
+                        <img src="https://www.freecodecamp.org/news/content/images/2019/07/s_98CC91BB1D7ABCD50AC04362B7F541F3549A631A6219D02FE7AED5645CF1CAA7_1549549534749_use-reactive-programming-you-must.jpg" width="400">
+                    </section>
+                </section>
+            </div>
+        </div>
+        <script src="../../utils/scripts/revealjs-deck.js"></script>
+    </body>
+</html>
