@@ -45,16 +45,17 @@
                         <h3>Function</h3>
                         <h4>Pull or Push?</h4>
                         <pre>
-                            <code data-trim data-line-numbers="1-5 | 7,8">
+                            <code data-trim data-line-numbers="1-5 | 8,9">
                                 
 								// production
 								const dillemaSolver = (question: string) => {
 									const answers = ["Yes", "No"];
-									console.log(`** Q: ${question} A: `, answers[Math.round(Math.random())]);
+									return answers[Math.round(Math.random())]; 
 								};
 								
+								const dilemma = 'Should I netflix and chill?';
 								// consumption
-								dillemaSolver("Should I netflix and chill?");
+								console.log(`** Q: ${dilemma} A: `, dillemaSolver(dilemma));
                             </code>
                         </pre>
                     </section>
@@ -81,14 +82,14 @@
                     </section>
                 </section>
                 <section>
-					<section data-state="chapter-slide">
+                    <section data-state="chapter-slide">
                         <h3>Promises</h3>
                         <h3>&</h3>
                         <h3>Observables</h3>
                     </section>
-                    <section> 
+                    <section>
                         <h3>Promise</h3>
-                        <h4>Pull or Push?</h4> 
+                        <h4>Pull or Push?</h4>
                         <pre>
                             <code data-trim data-line-numbers="2 | 7 | 11 | 4">
                                 
@@ -108,7 +109,7 @@
                     </section>
                     <section>
                         <h3>Observable</h3>
-                        <h4>Pull or Push?</h4>  
+                        <h4>Pull or Push?</h4>
                         <pre>
                             <code data-trim data-line-numbers="10 | 2 | 14 | 5">
                                 
@@ -131,16 +132,16 @@
                     </section>
                 </section>
                 <section>
-					<section data-state="chapter-slide">
-                        <h3>Hot VS Cold</h3> 
+                    <section data-state="chapter-slide">
+                        <h3>Hot VS Cold</h3>
                         <h3>Observables</h3>
-						<img src="https://i.pinimg.com/originals/f1/83/89/f183899bc7633661af44bea0781fd2f8.jpg" width="400">
-                    </section> 
+                        <img src="https://i.pinimg.com/originals/f1/83/89/f183899bc7633661af44bea0781fd2f8.jpg" width="400">
+                    </section>
                 </section>
                 <section>
-					<section data-state="chapter-slide">
-                        <h3>Takeaways</h3> 
-                    </section> 
+                    <section data-state="chapter-slide">
+                        <h3>Takeaways</h3>
+                    </section>
                     <section>
                         <div>
                             <img src="https://thepracticaldev.s3.amazonaws.com/i/vdjbnikg9toxw2y6kasy.png" height="600">
@@ -148,6 +149,20 @@
                     </section>
                     <section>
                         <img src="https://www.freecodecamp.org/news/content/images/2019/07/s_98CC91BB1D7ABCD50AC04362B7F541F3549A631A6219D02FE7AED5645CF1CAA7_1549549534749_use-reactive-programming-you-must.jpg" width="400">
+                    </section>
+                    <section data-transition="zoom">
+                        Main Takeaway...
+                        <p class="fragment">
+                            <span class="fragment highlight-red">
+                                Never ever forget to unsubscribe!
+                            </span>
+                        </p>
+                    </section>
+                </section>
+
+				<section>
+                    <section data-state="chapter-slide">
+                        <h3>Thank you</h3>
                     </section>
                 </section>
             </div>
