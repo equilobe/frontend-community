@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Equilobe Frontend Meetup #1</title>
+    <link rel="stylesheet" href="/node_modules/reveal.js/dist/reset.css">
+    <link rel="stylesheet" href="/node_modules/reveal.js/dist/reveal.css">
+    <link rel="stylesheet" href="../../utils/themes/revealjs-equilobe.theme.css" id="theme">
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="/node_modules/reveal.js/plugin/highlight/monokai.css" id="highlight-theme">
+    <script src="/node_modules/reveal.js/dist/reveal.js"></script>
+    <script src="/node_modules/reveal.js/plugin/notes/notes.js"></script>
+    <script src="/node_modules/reveal.js/plugin/markdown/markdown.js"></script>
+    <script src="/node_modules/reveal.js/plugin/highlight/highlight.js"></script>
+</head>
+
+<body>
+    <div class="reveal">
+        <!-- Any section element inside of this container is displayed as a slide -->
+        <div class="slides">
+            <section data-state="title-slide">
+                <h2>Maximum parallel</h2>
+                <h2>HTTP</h2>
+                <h2>connections</h2>
+            </section>
+            <section>
+                <section data-state="chapter-slide">
+                    <div>
+                        <img src="https://lh3.googleusercontent.com/proxy/-fpxIAa58XT0PbFAF3lmAHdXGZldFCNAzqWemynPUhkR48vXqX2jqIbs2IqLUf4UGP2sbicmUUfbZpDew3jW0ICKmW63V4Gk9oF5KavkNPtXUgT1egXQ_KRHy27CA6h2x0yaBVINvs8Dwn4qOVNrPDU_LsPNZOrlgjY"
+                            height="400">
+                    </div>
+                </section>
+                <section>
+                    <h4>Want your client connections to be...?</h4>
+                    <ul>
+                        <li>faster</li>
+                        <li>simpler</li>
+                        <li>robust</li>
+                    </ul>
+                </section>
+            </section>
+            <section>
+                <section data-state="chapter-slide">
+                    <h3>HTTP/1.1</h3>
+                    <h4>vs</h4>
+                    <h3>HTTP/2.0</h3>
+                    <h4>vs</h4>
+                    <h3>HTTP/3.0</h3>
+                </section>
+                <section>
+                    <img width="800" src="https://miro.medium.com/max/700/0*lY05UTuA-dWCXU-q.png" />
+                </section>
+                <section>
+                    <h3>HTTP/1.1</h3>
+                    <img width="400"
+                        src="https://i.kym-cdn.com/entries/icons/facebook/000/027/852/Screen_Shot_2018-12-12_at_1.02.39_PM.jpg" />
+                </section>
+                <section>
+                    <h3>HTTP/2.0</h3>
+                    <ul>
+                        <li>is binary, instead of textual</li>
+                        <li>is fully multiplexed, instead of ordered and blocking</li>
+                        <li>can therefore use one connection for parallelism</li>
+                        <li>uses header compression to reduce overhead</li>
+                        <li>allows servers to “push” responses proactively into client caches</li>
+                        <li>prioritize requests</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>HTTP/3.0</h3>
+                    <ul>
+                        <li>QUIC protocol</li>
+                        <li>introduces streams as first-class citizens at the transport layer</li>
+                        <li>packet loss affecting one stream doesn't affect others</li>
+                        <li>uses UDP instead of TCP</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Can I use...</h3>
+                    <div><a href="https://caniuse.com/?search=http2">HTTP/2.0</a></div>
+                    <div><a href="https://caniuse.com/?search=http3">HTTP/3.0</a></div>
+                </section>
+            </section>
+            <section>
+                <section data-state="chapter-slide">
+                    <h3><a
+                            href="https://imagekit.io/demo/http2-vs-http1?utm_source=blog&utm_medium=blog&utm_campaign=Blog">Demo
+                            time</a></h3>
+                </section>
+            </section>
+
+            <section>
+                <section data-state="chapter-slide">
+                    <h3>Thank you</h3>
+                </section>
+            </section>
+        </div>
+    </div>
+    <script src="../../utils/scripts/revealjs-deck.js"></script>
+</body>
+
+</html>
