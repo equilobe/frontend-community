@@ -1,0 +1,331 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>October News</title>
+
+	<link rel="stylesheet" href="/node_modules/reveal.js/dist/reset.css">
+	<link rel="stylesheet" href="/node_modules/reveal.js/dist/reveal.css">
+	<link rel="stylesheet" href="../../utils/themes/revealjs-equilobe.theme.css" id="theme">
+
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="/node_modules/reveal.js/plugin/highlight/monokai.css" id="highlight-theme">
+
+	<script src="/node_modules/reveal.js/dist/reveal.js"></script>
+	<script src="/node_modules/reveal.js/plugin/notes/notes.js"></script>
+	<script src="/node_modules/reveal.js/plugin/markdown/markdown.js"></script>
+	<script src="/node_modules/reveal.js/plugin/highlight/highlight.js"></script>
+
+	<style>
+		.title-slide {
+			background:
+				linear-gradient(rgba(1, 189, 251, 0.8), rgba(1, 189, 251, 0.8)),
+				url("https://images.unsplash.com/photo-1495020689067-958852a7765e");
+
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+	</style>
+
+	<script>
+		document.addEventListener("DOMContentLoaded", function () {
+			const references = {
+				'languages-tools': [
+					{
+						title: 'v8',
+						links: [
+							'https://v8.dev/'
+						]
+					},
+					{
+						title: 'npmjs',
+						links: [
+							'https://github.blog/',
+							'https://github.com/npm/cli/releases'
+						]
+					},
+					{
+						title: 'javascript',
+						links: [
+							'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Language_Resources'
+						]
+					},
+					{
+						title: 'typescript',
+						links: [
+							'https://github.com/microsoft/TypeScript/releases'
+						]
+					}
+				],
+				'frameworks': [
+					{
+						title: 'Angular',
+						links: [
+							'https://github.com/angular/angular/tags',
+							'https://blog.angular.io/',
+							'https://angular.io/guide/roadmap#angular-component-accessibility'
+						]
+					},
+					{
+						title: 'React',
+						links: [
+							'https://github.com/facebook/react/tags',
+							'https://reactjs.org/blog/all.html/ '
+						]
+					},
+					{
+						title: 'Vue',
+						links: [
+							'https://github.com/vuejs/vue-next/tags',
+							'https://news.vuejs.org/'
+						]
+					},
+					{
+						title: 'Lit',
+						links: [
+							'https://github.com/lit/lit/tags',
+							'https://lit.dev/blog/'
+						]
+					},
+					{
+						title: 'Open Web Components',
+						links: [
+							'https://open-wc.org/blog/'
+						]
+					}
+				],
+				'libraries': [
+					{
+						title: 'Rxjs',
+						links: [
+							'https://github.com/ReactiveX/rxjs/tags',
+							'https://github.com/ReactiveX/rxjs/blob/master/CHANGELOG.md'
+						]
+					}
+				],
+				'trending': [
+					{
+						links: [
+							'https://news.ycombinator.com/',
+							'https://hackernoon.com/',
+							'https://medium.com/',
+							'https://medium.com/tag/web-development'
+						]
+					}
+				],
+				'open-source': [
+					{
+						links: [
+							'https://github.com/trending/javascript?since=monthly&spoken_language_code=en',
+							'https://github.com/trending/typescript?since=monthly&spoken_language_code=en',
+							'https://github.com/trending/css?since=monthly&spoken_language_code=en',
+							'https://github.com/trending/scss?since=monthly&spoken_language_code=en',
+							'https://github.com/trending/html?since=monthly&spoken_language_code=en',
+						]
+					}
+				],
+			};
+
+			function getLinksList(links) {
+				return `
+						<ul>
+							${links.map(link => `<li><a href="${link}" target="blank">${link}</a></li>`).join('')}
+						</ul>
+					`;
+			}
+
+			for (const chapter of Object.keys(references)) {
+				const sectionEl = document.querySelector(`#${chapter}`);
+				const titleEl = `<h4>References</h4>`;
+				const referencesEl = `
+						<ul>
+							${references[chapter].map(item => {
+					return item.title
+						? `
+									<li>
+										${item.title}
+
+										${getLinksList(item.links)}
+									</li>
+								`
+						: getLinksList(item.links);
+				}).join('')}
+						</ul>
+					`;
+
+				sectionEl.innerHTML = `
+						${titleEl} 
+						${referencesEl}
+					`;
+			}
+		})
+	</script>
+</head>
+
+<body>
+	<div class="reveal">
+		<!-- Any section element inside of this container is displayed as a slide -->
+		<div class="slides">
+			<section data-state="title-slide">
+				<h2>October</h2>
+				<h2>News</h2>
+				<div></div>
+			</section>
+
+			<section>
+				<section data-state="chapter-slide">
+					<h3>Languages && Tools</h3>
+				</section>
+
+				<section>
+					<p>V8 </p>
+					<p><small>v9.6</small></p>
+					<p>Reference Types for WebAssembly - <a
+							href="https://github.com/WebAssembly/reference-types/blob/master/proposals/reference-types/Overview.md">link</a>
+					</p>
+					<p>Finding elements in Arrays and TypedArrays - <a
+							href="https://v8.dev/features/finding-in-arrays">link</a></p>
+				</section>
+				<section>
+					<p>NPM</p>
+					<p><small>v8.0.0 - v8.1.1</small></p>
+					<p>Breaking changes - <a href="https://github.com/npm/cli/releases/tag/v8.0.0">link</a></p>
+					<p>Minor additions - <a href="https://github.com/npm/cli/releases/tag/v8.1.0">link</a></p>
+				</section>
+
+				<section>
+					<p>TypeScript</p>
+					<p>Still waiting for 4.5 - <a
+							href="https://devblogs.microsoft.com/typescript/announcing-typescript-4-5-beta/">link</a>
+					</p>
+				</section>
+
+				<section class="references" id="languages-tools">
+					<!-- Automatically generated -->
+				</section>
+			</section>
+
+			<section>
+				<section data-state="chapter-slide">
+					<h3>Frameworks</h3>
+				</section>
+
+				<section>
+					<p>Angular 12 - some minor fixes</p>
+					<p>Angular 13 - more beta releases</p>
+					<p>Angular Component’s accessibility - <a
+							href="https://blog.angular.io/improving-angular-components-accessibility-89b8ae904952">link</a>
+					</p>
+					<p>Roadmap - <a href="https://angular.io/guide/roadmap#angular-component-accessibility">link</a></p>
+				</section>
+
+				<section>
+					<p>React</p>
+					<img src="https://c.tenor.com/I8B0y6nox-0AAAAM/middle-of-nowhere-tumbleweed.gif" />
+				</section>
+				<section>
+					<p>Vue</p>
+					<p><small>v3.2.20</small></p>
+					<p>Increase of patch version - <a
+							href="https://github.com/vuejs/vue-next/blob/master/CHANGELOG.md#3220-2021-10-08">link</a>
+					</p>
+				</section>
+
+				<section>
+					<p>Lit</p>
+					<p><small>v2.0.1 - v2.0.2</small></p>
+					<p>Not the changes we need but the changes that we deserve - <a
+							href="https://github.com/lit/lit/releases/tag/lit%402.0.1">link</a></p>
+				</section>
+
+				<section data-state="references" id="frameworks">
+					<!-- Automatically generated -->
+				</section>
+			</section>
+
+			<section>
+				<section data-state="chapter-slide">
+					<h3>Libraries</h3>
+				</section>
+
+				<section>
+					<p>RxJS</p>
+					<p>7.4.0 - <a
+							href="https://github.com/ReactiveX/rxjs/blob/master/CHANGELOG.md#740-2021-10-06">link</a>
+					</p>
+				</section>
+
+				<section data-state="references" id="libraries">
+					<!-- Automatically generated -->
+				</section>
+			</section>
+
+			<section>
+				<section data-state="chapter-slide">
+					<h3>Trending</h3>
+				</section>
+
+				<section>
+					<p>Authenticate users with web3 signed messages</p>
+					<p><a href="https://medium.com/@bytesbay/you-dont-need-jwt-anymore-974aa6196976">link</a></p>
+				</section>
+
+				<section>
+					<p>Elf - reactive store</p>
+					<p><a
+							href="https://medium.com/netanelbasal/introducing-elf-a-reactive-store-with-magical-powers-for-js-apps-678d6cb0596f">link</a>
+					</p>
+				</section>
+
+				<section>
+					<p>Web 3.0</p>
+					<p><a
+							href="https://medium.com/theweb3stack/web-3-0-an-upgrade-to-the-internet-c85e0768b4b9	">link</a>
+					</p>
+				</section>
+
+				<section>
+					<p>OWASP</p>
+					<p><a
+							href="https://medium.com/shiftleft-blog/owasp-updates-the-top-10-web-application-security-risks-4cb9901fee0a">link</a>
+					</p>
+				</section>
+				<section data-state="references" id="trending">
+					<!-- Automatically generated -->
+				</section>
+			</section>
+
+			<section>
+				<section data-state="chapter-slide">
+					<h3>Open Source</h3>
+				</section>
+
+				<section>
+					<p>Uptime Kuma - self-hosted monitoring tool</p>
+					<p><a href="https://github.com/louislam/uptime-kuma">link</a></p>
+				</section>
+
+				<section>
+					<p>Vuetify</p>
+					<p><a href="https://vuetifyjs.com/en/">link</a></p>
+				</section>
+				<section>
+					<p>Flipper</p>
+					<p><a href="https://github.com/facebook/flipper">link</a></p>
+				</section>
+			</section>
+
+			<section data-state="chapter-slide">
+				<h3>Thank you!</h3>
+			</section>
+		</div>
+	</div>
+
+	<script src="../../utils/scripts/revealjs-deck.js"></script>
+</body>
+
+</html>
