@@ -1,0 +1,330 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>January News</title>
+
+	<link rel="stylesheet" href="/node_modules/reveal.js/dist/reset.css">
+	<link rel="stylesheet" href="/node_modules/reveal.js/dist/reveal.css">
+	<link rel="stylesheet" href="../../utils/themes/revealjs-equilobe.theme.css" id="theme">
+
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="/node_modules/reveal.js/plugin/highlight/monokai.css" id="highlight-theme">
+
+	<script src="/node_modules/reveal.js/dist/reveal.js"></script>
+	<script src="/node_modules/reveal.js/plugin/notes/notes.js"></script>
+	<script src="/node_modules/reveal.js/plugin/markdown/markdown.js"></script>
+	<script src="/node_modules/reveal.js/plugin/highlight/highlight.js"></script>
+
+	<style>
+		.title-slide {
+			background:
+				linear-gradient(rgba(1, 189, 251, 0.8), rgba(1, 189, 251, 0.8)),
+				url("https://images.unsplash.com/photo-1495020689067-958852a7765e");
+
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+	</style>
+
+	<script>
+		document.addEventListener("DOMContentLoaded", function () {
+			const references = {
+				'languages-tools': [
+					{
+						title: 'v8',
+						links: [
+							'https://v8.dev/'
+						]
+					},
+					{
+						title: 'npmjs',
+						links: [
+							'https://github.blog/',
+							'https://github.com/npm/cli/releases'
+						]
+					},
+					{
+						title: 'javascript',
+						links: [
+							'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Language_Resources'
+						]
+					},
+					{
+						title: 'typescript',
+						links: [
+							'https://github.com/microsoft/TypeScript/releases'
+						]
+					}
+				],
+				'frameworks': [
+					{
+						title: 'Angular',
+						links: [
+							'https://github.com/angular/angular/tags',
+							'https://blog.angular.io/',
+							'https://angular.io/guide/roadmap#angular-component-accessibility'
+						]
+					},
+					{
+						title: 'React',
+						links: [
+							'https://github.com/facebook/react/tags',
+							'https://reactjs.org/blog/all.html/ '
+						]
+					},
+					{
+						title: 'Vue',
+						links: [
+							'https://github.com/vuejs/vue-next/tags',
+							'https://news.vuejs.org/'
+						]
+					},
+					{
+						title: 'Lit',
+						links: [
+							'https://github.com/lit/lit/tags',
+							'https://lit.dev/blog/'
+						]
+					},
+					{
+						title: 'Open Web Components',
+						links: [
+							'https://open-wc.org/blog/'
+						]
+					}
+				],
+				'libraries': [
+					{
+						title: 'Rxjs',
+						links: [
+							'https://github.com/ReactiveX/rxjs/tags',
+							'https://github.com/ReactiveX/rxjs/blob/master/CHANGELOG.md'
+						]
+					}
+				],
+				'trending': [
+					{
+						links: [
+							'https://news.ycombinator.com/',
+							'https://hackernoon.com/',
+							'https://medium.com/',
+							'https://medium.com/tag/web-development'
+						]
+					}
+				],
+				'open-source': [
+					{
+						links: [
+							'https://github.com/trending/javascript?since=monthly&spoken_language_code=en',
+							'https://github.com/trending/typescript?since=monthly&spoken_language_code=en',
+							'https://github.com/trending/css?since=monthly&spoken_language_code=en',
+							'https://github.com/trending/scss?since=monthly&spoken_language_code=en',
+							'https://github.com/trending/html?since=monthly&spoken_language_code=en',
+						]
+					}
+				],
+			};
+
+			function getLinksList(links) {
+				return `
+						<ul>
+							${links.map(link => `<li><a href="${link}" target="blank">${link}</a></li>`).join('')}
+						</ul>
+					`;
+			}
+
+			for (const chapter of Object.keys(references)) {
+				const sectionEl = document.querySelector(`#${chapter}`);
+				const titleEl = `<h4>References</h4>`;
+				const referencesEl = `
+						<ul>
+							${references[chapter].map(item => {
+					return item.title
+						? `
+									<li>
+										${item.title}
+
+										${getLinksList(item.links)}
+									</li>
+								`
+						: getLinksList(item.links);
+				}).join('')}
+						</ul>
+					`;
+
+				sectionEl.innerHTML = `
+						${titleEl} 
+						${referencesEl}
+					`;
+			}
+		})
+	</script>
+</head>
+
+<body>
+	<div class="reveal">
+		<!-- Any section element inside of this container is displayed as a slide -->
+		<div class="slides">
+			<section data-state="title-slide">
+				<h2>March</h2>
+				<h2>News</h2>
+				<div></div>
+			</section>
+
+			<section>
+				<section data-state="chapter-slide">
+					<h3>Languages && Tools</h3>
+				</section>
+
+				<section>
+					<p>V8 </p>
+					<p><img src="https://i.imgflip.com/3wigm5.jpg" /></p>
+				</section>
+				<section>
+					<p>NPM</p>
+					<p><small>v8.5.0</small></p>
+					<p>Automatic workspace roots - <a href="https://github.com/npm/cli/releases/tag/v8.5.0">link</a></p>
+					<p>Bugfixes on Arborist</p>
+				</section>
+
+				<section>
+					<p>TypeScript</p>
+					<p>4.6 Release Candidate - <a
+							href="https://github.com/microsoft/TypeScript/releases/tag/v4.6-rc">link</a>
+					</p>
+				</section>
+
+				<section class="references" id="languages-tools">
+					<!-- Automatically generated -->
+				</section>
+			</section>
+
+			<section>
+				<section data-state="chapter-slide">
+					<h3>Frameworks</h3>
+				</section>
+
+				<section>
+					<p>Angular 11 - ends LTS on May 11</p>
+					<p>Angular 14 big updates- prerelease next.9</p>
+					<ul style="font-size: smaller; margin-left: 5em;">
+						<li>Better typing @angular/forms</li>
+						<li>Independent Components</li>
+						<li>Micro Frontend Support</li>
+					</ul>
+					<p>Roadmap - <a href="https://angular.io/guide/roadmap#angular-component-accessibility">link</a></p>
+				</section>
+
+				<section>
+					<p>React 18 - <a
+							href="https://reactjs.org/blog/2022/03/29/react-v18.html#whats-new-in-react-18">link</a></p>
+				</section>
+				<section>
+					<p>Vue</p>
+					<p><img src="https://i.pinimg.com/originals/bd/71/f0/bd71f076731d3e8450e6496e0d46c7aa.jpg" /></p>
+				</section>
+
+				<section>
+					<p>Lit</p>
+					<p><small>v2.2.0</small></p>
+					<p>Rendering debug events - <a href="https://github.com/lit/lit/pull/2401">link</a></p>
+					<p>Render Lit components as static HTML with Eleventy + Lit</p>
+					<p><a href="https://lit.dev/blog/2022-02-07-eleventy/">link</a></p>
+				</section>
+
+				<section data-state="references" id="frameworks">
+					<!-- Automatically generated -->
+				</section>
+			</section>
+
+			<section>
+				<section data-state="chapter-slide">
+					<h3>Libraries</h3>
+				</section>
+
+				<section>
+					<p>RxJS</p>
+					<p>8.0.0 roadmap - <a href="https://github.com/ReactiveX/rxjs#the-roadmap-from-rxjs-7-to-8">link</a>
+					</p>
+					<p>alpha 3 release is here - <a
+							href="https://github.com/ReactiveX/rxjs/releases/tag/8.0.0-alpha.3">link</a></p>
+				</section>
+
+				<section data-state="references" id="libraries">
+					<!-- Automatically generated -->
+				</section>
+			</section>
+
+			<section>
+				<section data-state="chapter-slide">
+					<h3>Trending</h3>
+				</section>
+
+				<section>
+					<p>Connect to a DB via CSS</p>
+					<p><a href="https://www.leemeichin.com/posts/yes-i-can-connect-to-a-db-in-css.html">link</a></p>
+				</section>
+
+				<section>
+					<p>Nice VSCode extensions</p>
+					<p><a
+							href="https://betterprogramming.pub/7-exciting-vs-code-extensions-released-in-january-2022-dccf1ec77629">link</a>
+					</p>
+				</section>
+
+				<section>
+					<p>Learning notes</p>
+					<p><a href="https://github.com/keyvanakbary/learning-notes">link</a></p>
+				</section>
+
+				<section data-state="references" id="trending">
+					<!-- Automatically generated -->
+				</section>
+			</section>
+
+			<section>
+				<section data-state="chapter-slide">
+					<h3>Articles</h3>
+				</section>
+
+				<section>
+					<p>Proximity principle</p>
+					<p><a href="https://koenvangilst.nl/blog/code-colocation-is-king">link</a></p>
+				</section>
+			</section>
+
+			<section>
+				<section data-state="chapter-slide">
+					<h3>Open Source</h3>
+				</section>
+
+				<section>
+					<p>Store for Vue</p>
+					<p><a href="https://github.com/vuejs/pinia">link</a></p>
+				</section>
+
+				<section>
+					<p>AR Cut/Paste</p>
+					<p><a href="https://github.com/cyrildiagne/ar-cutpaste">link</a></p>
+				</section>
+				<section>
+					<p>Sunflower Land</p>
+					<p><a href="https://github.com/sunflower-land/sunflower-land">link</a></p>
+				</section>
+			</section>
+
+			<section data-state="chapter-slide">
+				<h3>Thank you!</h3>
+			</section>
+		</div>
+	</div>
+
+	<script src="../../utils/scripts/revealjs-deck.js"></script>
+</body>
+
+</html>
